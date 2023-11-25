@@ -9,8 +9,8 @@
   --main-lightGray: #d2d2d2;
   --main-veryLight: #e6e6e6;
 
-  --fa-style-family-classic: "Font Awesome 6 Free";
-  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+  --fa-style-family-classic: 'Font Awesome 6 Free';
+  --fa-font-solid: normal 900 1em/1 'Font Awesome 6 Free';
 }
 
 * {
@@ -32,7 +32,7 @@ html {
 }
 
 body {
-  font-family: "Work Sans", Helvetica, Arial, Sans-serif;
+  font-family: 'Work Sans', Helvetica, Arial, Sans-serif;
   font-size: 1.4rem;
 }
 
@@ -58,11 +58,11 @@ h3 {
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 strong {
@@ -191,8 +191,7 @@ ul {
   border-radius: 3px;
   z-index: 1;
   transform-origin: 5px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
@@ -219,10 +218,11 @@ ul {
 
 #menu {
   position: absolute;
-  width: auto;
+  right: 0;
+  width: 160px;
   height: auto;
   margin: -50px 0 0 -50px;
-  padding: 8em 10em 2em 2em;
+  padding: 7em 3em 3em 3em;
   background-color: var(--main-darkGray);
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -232,7 +232,7 @@ ul {
 }
 
 #menu li {
-  padding: 10px 0;
+  padding: 25px 0 0 0;
   transition-delay: 2s;
 }
 
@@ -339,7 +339,7 @@ ul {
   left: -25%;
   width: 200%;
   height: 150%;
-  background-image: url(./img/me_3.jpeg);
+  background-image: url(./img/me_3_600.webp);
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
@@ -349,13 +349,19 @@ ul {
 
 .welcome-picture {
   border: 1em solid var(--main-green);
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.welcome-underscore {
+.typer {
+  height: max-content;
   position: relative;
+}
+
+.cursor {
+  position: relative;
+  display: inline-block;
   width: 15rem;
   height: 1em;
   overflow: hidden;
@@ -363,6 +369,18 @@ ul {
   background: var(--main-green);
   animation: flash 1.5s step-start infinite;
   justify-content: flex-start;
+}
+
+#typed-letter {
+  position: absolute;
+  font-size: 20rem;
+  bottom: 20px;
+  color: var(--main-green);
+  font-family: monospace;
+  width: 150px;
+  text-align: center;
+  /* opacity: 0;
+  transition: opacity 0.5s ease-out; */
 }
 
 @media (min-width: 1024px) {
@@ -382,13 +400,16 @@ ul {
   .welcome-main {
     justify-content: center;
   }
-  .welcome-stack {
-    justify-content: center;
-  }
-  .welcome-stack-icons {
-    justify-content: center;
-  }
+
   .about-text {
+    text-align: center;
+  }
+
+  .welcome-stack-cloud {
+    justify-content: center;
+  }
+
+  .welcome-stack-text {
     text-align: center;
   }
 }
@@ -399,63 +420,40 @@ ul {
 
 .welcome-stack {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* On mobile make it col */
   margin: 4em 0 0 0;
   gap: 1em;
   align-items: center;
   align-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap;           (DO THIS ON MOBILE ONLY*/
   transition: all 0.2s ease-in-out;
 }
 
-.welcome-stack-icons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1em;
-  transition: all 0.5s ease-in-out;
+.welcome-stack-text {
+  min-width: 120px;
 }
 
-.welcome-stack-sub {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 1em;
-}
-
-.welcome-stack-sub span[title] {
+.welcome-stack-cloud {
   position: relative;
-}
-
-.welcome-stack-sub span[title]::before {
-  content: attr(title);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 5px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  border-radius: 4px;
-  font-size: 12px;
-  opacity: 0;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.welcome-stack-sub span[title]:hover::before {
-  opacity: 1;
-}
-
-.welcome-stack-sub span {
-  font-size: 40px;
   display: flex;
-  align-items: center;
-  align-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
+  max-width: 800px;
 }
 
-.welcome-stack span img {
-  height: 40px;
+.welcome-stack-bubble {
+  position: relative;
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid var(--main-gray);
+  background-color: var(--main-lightGray);
+  background: linear-gradient(350deg, var(--main-lightGray), var(--main-veryLight) 40%);
+  box-shadow: 0 0 1px #00746144;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: transform 0.2s ease-out;
 }
 
 .green {
@@ -480,13 +478,12 @@ ul {
   border: solid 5px var(--main-gray);
   width: 250px;
   height: 250px;
-  background-image: url(./img/me_2.jpg);
+  background-image: url(./img/me_2_600.webp);
   background-position: 50%;
   background-size: cover;
 }
 
 .about-text p {
-  font-size: 1.5rem;
   padding: 1rem 0 0 30px;
 }
 
@@ -595,6 +592,26 @@ ul {
   .about-text p {
     padding: 1rem 0 0 0;
   }
+
+  .footer-text {
+    max-width: 110px;
+  }
+
+  .navfoot-list a {
+    font-size: 2.8rem;
+  }
+
+  .welcome-stack {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+
+@media (max-width: 424px) {
+  .welcome-stack {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (min-width: 769px) {
@@ -649,6 +666,7 @@ ul {
   gap: 5px;
   text-decoration: none;
   justify-content: center;
+  font-size: 1.8rem;
 }
 
 .projects-grid-mini .btn {
@@ -666,6 +684,10 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.footer-text h4 {
+  font-size: 1.25rem;
 }
 
 .contact-container {
@@ -708,6 +730,7 @@ ul {
   font-weight: bold;
   text-decoration: none;
   color: var(--main-gray);
+  font-size: 1.8rem;
 }
 
 .contact-info a:hover {
