@@ -11,8 +11,7 @@
       name="description"
       content="This is my developer portfolio, where you can get to know me and my work.
      I'm a Software Developer with a background in Mechanical Engineering. Have a look through my past projects,
-     which demonstrate my experience in both front-end and back-end programming. If you like what you see, please get in touch!"
-    />
+     which demonstrate my experience in both front-end and back-end programming. If you like what you see, please get in touch!" />
     <title>Portfolio | Daniel Santos | Developer</title>
     <script src="https://kit.fontawesome.com/9cd66e003a.js" crossorigin="anonymous" async></script>
     <script src="main.js" async></script>
@@ -38,18 +37,20 @@
         <ul class="navfoot-list">
           <li><a href="#welcome-section">Welcome</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Blog</a></li>
           <li><a href="#about">About Me</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div id="menuToggle" class="mobile-only">
-        <input type="checkbox" />
+        <input id="menuCheckbox" type="checkbox" />
         <span></span>
         <span></span>
         <span></span>
         <ul id="menu">
           <li><a href="#welcome-section">Welcome</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Blog</a></li>
           <li><a href="#about">About Me</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -267,12 +268,32 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- BLOG HIGHLIGHT -->
+    <section id="blog" class="about-section">
+      <div class="container">
+        <div class="about-container">
+          <h4 class="purple">Blog</h4>
+          <h2>What I've Been Writing About</h2>
+          <div class="blog-content">
+            <a href="/blog/docker-without-docker-desktop-windows">
+              <div class="blog-card">
+                <h3>How to Configure Docker Engine on Windows 10 for Beginners</h3>
+                <p>
+                  Docker (and, more broadly, the technology of containerisation) has become an indispensable tool for developers. If you're
+                  looking to bundle your code into a container, it's highly likely<span style="color: gray">.....</span>
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ABOUT -->
     <section id="about" class="about-section">
       <div class="container">
         <div class="about-container">
-          <h4 class="purple">About Me</h4>
+          <h4 class="green">About Me</h4>
           <h2>A Developer with an Engineering Mindset</h2>
           <div class="about-content">
             <div class="about-img-container">

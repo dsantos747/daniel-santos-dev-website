@@ -228,7 +228,7 @@ ul {
   -moz-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 #menu li {
@@ -565,8 +565,7 @@ ul {
   flex-direction: column;
 }
 
-/* Mobile styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .pc-only {
     display: none;
   }
@@ -574,7 +573,10 @@ ul {
   #menuToggle {
     display: flex;
   }
+}
 
+/* Mobile styles */
+@media screen and (max-width: 768px) {
   .about-img {
     width: 200px;
     height: 200px;
@@ -678,6 +680,112 @@ ul {
   background-color: var(--main-white);
   border: 2px solid var(--main-green);
   transition: all 0.3s;
+}
+
+#returnHome a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: var(--main-lightGreen);
+}
+
+#returnHome a:hover {
+  color: var(--main-green);
+}
+
+.blog-content {
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.blog-content a {
+  text-decoration: none;
+  color: black;
+  max-width: 450px;
+}
+
+.blog-card {
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid var(--main-gray);
+  background-color: var(--main-lightGray);
+  background: linear-gradient(350deg, var(--main-lightGray), var(--main-veryLight) 40%);
+  box-shadow: 0 2px 3px #710b7344;
+}
+
+.blog-card:hover {
+  transform: scale(0.99);
+  box-shadow: 0 2px 10px #710b7344;
+  transition: transform 0.2s;
+}
+
+.blog-card h3 {
+  margin-bottom: 10px;
+}
+
+.post-container {
+  margin: 0 6rem;
+  max-width: 1000px;
+}
+
+.post-container h1 {
+  font-size: 5rem;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 0;
+  align-items: center;
+  /* overflow-x: hidden; */
+}
+
+.post-content ul {
+  list-style-type: circle;
+  font-size: 1.8rem;
+}
+
+.post-content li {
+  padding: 5px 0;
+}
+
+.post-content p {
+  width: 100%;
+}
+
+.post-content h3 {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.post-img {
+  display: flex;
+}
+
+.post-img img {
+  margin: 0 auto;
+  width: auto;
+  max-width: 80%;
+  max-height: 400px;
+}
+
+.code {
+  color: var(--main-darkGray);
+  background-color: var(--main-lightGray);
+  font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  .post-container h1 {
+    font-size: 3rem;
+  }
+
+  .post-container {
+    margin: 0 2rem;
+  }
 }
 
 .footer-container {

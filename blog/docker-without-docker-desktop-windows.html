@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" href="./icons/me_1.jpg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="Portfolio - Daniel Santos" content="Software Developer Portfolio" />
+    <meta
+      name="description"
+      content="This is my developer portfolio, where you can get to know me and my work.
+     I'm a Software Developer with a background in Mechanical Engineering. Have a look through my past projects,
+     which demonstrate my experience in both front-end and back-end programming. If you like what you see, please get in touch!" />
+    <title>Portfolio | Daniel Santos | Developer</title>
+    <script src="https://kit.fontawesome.com/9cd66e003a.js" crossorigin="anonymous" async></script>
+    <script src="main.js" async></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav id="navbar" class="nav">
+      <div id="returnHome">
+        <a href="/"
+          ><span><i class="fa-solid fa-arrow-left"></i> </span>Portfolio</a
+        >
+      </div>
+    </nav>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="post-container">
+          <h4 class="green">Blog</h4>
+          <h1>How to Configure Docker Engine on Windows 10 for Beginners (Docker without Docker Desktop)</h1>
+          <p style="margin-top: 10px; font-size: medium">02/12/2023</p>
+          <div class="post-content">
+            <div class="post-img">
+              <img src="./img/docker_logo.svg" alt="docker logo" />
+            </div>
+            <p>
+              Docker (and, more broadly, the technology of containerisation) has become an indispensable tool for developers. If you're
+              looking to bundle your code into a container, it's highly likely you'll be wanting to use Docker.
+              <a href="https://www.docker.com/products/docker-desktop/" target="_blank">Docker Desktop</a> is a software for managing your
+              container images - available for free for non-enterprise customers. However, you may be looking to use Docker from the command
+              line - and the good news is, you can! In this post, I'll run you through how to set up Docker Engine on Windows 10. This post
+              will be especially useful if you are a complete beginner to using Docker and Linux.
+            </p>
+            <h3>Reasons for using Docker without Docker Desktop</h3>
+            <p>
+              In this post we will be setting up Docker Engine, but you should first ask yourself: do I need to go to this hassle? Docker
+              Desktop runs Docker Engine under the hood anyway, but with a helpful GUI. It is arguably the best way to work with Docker. For
+              a newcomer with little Linux experience, working with Docker Engine through CLI might be a bit intimidating. To see if it's
+              really for you, I'll give you the reasons I chose to run Docker without Docker Desktop:
+            </p>
+            <ul>
+              <li>
+                <strong>Storage:</strong> I wasn't keen to add another software to my laptop, one that wouldn't get used much and just
+                contribute to laptop slowdown. Installing Docker Engine was a more lightweight alternative.
+              </li>
+              <li>
+                <strong>Usage:</strong> I didn't see myself working with Docker too often for my usecases (for now), so I didn't mind
+                dealing with working only through the CLI.
+              </li>
+              <li>
+                <strong>Learning Experience:</strong> To be honest, the main reason I configured Docker without Docker Engine was for the
+                learning experience. I've installed software through packaged installers many times, but at the time my Linux experience was
+                minimal, so I saw it as a good learning opportunity.
+              </li>
+            </ul>
+            <p>If you've gotten this far and still want to go ahead with this, then read on!</p>
+            <h3>Step 1: Activate Windows Subsystem for Linux (WSL)</h3>
+            <p>
+              Head to the Microsoft Store and download Windows Subsystem for Linux. This version comes preloaded with Linux's “systemd”
+              suite, which we're going to need.
+            </p>
+            <div class="post-img">
+              <img src="./img/store-wsl.webp" alt="WSL2 in Microsoft Store" />
+            </div>
+            <h3>Step 2: Install a Linux Distribution</h3>
+            <p>
+              Next up, we're going to need a Linux distribution. You could use any here, but for simplicity I recommend you go with Ubuntu.
+              Grab the latest version from the Microsoft store.
+            </p>
+            <div class="post-img">
+              <img src="./img/store-ubuntu.webp" alt="Ubuntu in Microsoft Store" />
+            </div>
+            <h3>Step 3: Launch and Set Up Ubuntu</h3>
+            <p>
+              Launch Ubuntu from the start menu. It will do a bit of setting up, then ask you to create a User and Password. If you're fully
+              new to Linux, think of this as the equivalent to your Windows user account login. <strong>Careful</strong> - Linux doesn't
+              show the cursor or what you've typed when you're typing the password - so don't get confused if you don't see anything
+              changing.
+            </p>
+            <h3>Step 4: Update Ubuntu APT</h3>
+            <p>
+              Before doing anything, it's a good idea to update the Ubuntu APT repository (a package manager for Ubuntu). Run
+              <span class="code">sudo apt update</span>. For information, sudo is short for “super-user do”.
+            </p>
+            <div class="post-img">
+              <img src="./img/unix-apt.webp" alt="Updating APT in Ubuntu" />
+            </div>
+            <h3>Step 5: Install Docker Engine</h3>
+            <p>
+              We now have a working Ubuntu subsystem. So to install Docker Engine, we refer to the installation instructions on the Docker
+              docs. Docker provide a
+              <a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script" target="_blank"
+                >convenience script</a
+              >, which tailors the docker installation to your Linux distribution. Simply run the two commands, ensuring you use sudo for
+              the second one. This will install Docker Engine in your Linux distribution.
+            </p>
+            <div class="post-img">
+              <img src="./img/docker.webp" alt="Installing Docker with the convenience script" />
+            </div>
+            <p>
+              <strong>Note:</strong> I recommend getting the script from the provided link, rather than my snip above, as it may change in
+              the future.
+            </p>
+            <h3>Step 6: Create Docker User</h3>
+            <p>
+              Now that we have Docker Engine installed, we need to give our user access to use it. To do so, run
+              <span class="code">sudo usermod -aG docker $User</span>. Replace <span class="code">$User</span> with the user name you
+              created.
+            </p>
+            <div class="post-img">
+              <img src="./img/unix-usermod.webp" alt="Adding your user to the docker group" />
+            </div>
+            <h3>Step 7: Verify Installation</h3>
+            <p>
+              To check everything went according to plan, there are a few steps to take. Firstly, run
+              <span class="code">docker --version</span>. If you get any response, you have Docker installed.
+            </p>
+            <div class="post-img">
+              <img src="./img/docker-version.webp" alt="Checking Docker version" />
+            </div>
+            <p>Next open up Powershell and shutdown WSL by typing <span class="code">wsl --shutdown</span>.</p>
+            <div class="post-img">
+              <img src="./img/psl-wsl.webp" alt="Shutting down WSL2 from Powershell" />
+            </div>
+            <p>
+              Wait ~10 seconds, then start Ubuntu up again and run <span class="code">docker run hello-world</span>. If you get the below
+              output, then congratulations - you've done it! I'm really proud of you.
+            </p>
+            <div class="post-img">
+              <img src="./img/docker-hello.webp" alt="Running Docker Hello World" />
+            </div>
+            <p>
+              To use Docker, simply run the commands appropriate for what you need to do - e.g <span class="code">docker images</span> to
+              see a list of available images. Have fun!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-container">
+          <div class="contact-title">
+            <h4 class="purple">Contact</h4>
+            <h2>Let's get in touch!</h2>
+          </div>
+          <div class="contact-content">
+            <div class="contact-box">
+              <span><i class="fab fa-at"></i></span>
+              <div class="contact-info">
+                <a id="mail-link" href="mailto:daniel.jwd.santos@gmail.com?subject=Enquiry%20From%20Portfolio%20Website" target="_blank"
+                  >daniel.jwd.santos@gmail.com</a
+                >
+              </div>
+            </div>
+            <div class="contact-box">
+              <span><i class="fab fa-linkedin-in"></i></span>
+              <div class="contact-info">
+                <a id="linkedin-link" href="https://www.linkedin.com/in/daniel-santos-eng/" target="_blank">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-text"><h4>Copyright © 2023. All rights reserved</h4></div>
+
+          <div class="footer-socials">
+            <ul class="navfoot-list">
+              <li>
+                <a href="https://www.linkedin.com/in/daniel-santos-eng/" target="_blank" class="nav-btn" aria-label="LinkedIn Profile"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://github.com/dsantos747" target="_blank" class="nav-btn" aria-label="Github Page"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
