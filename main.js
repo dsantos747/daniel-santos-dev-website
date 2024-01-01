@@ -57,7 +57,7 @@ const box = document.querySelector('.welcome-stack-cloud');
 const typedLetter = document.getElementById('typed-letter');
 let lastKeyPressTime = 0;
 
-document.addEventListener('mousemove', throttledMouseMove);
+// document.addEventListener('mousemove', throttledMouseMove);
 
 document.addEventListener('keydown', (e) => {
   const currentTime = new Date().getTime();
