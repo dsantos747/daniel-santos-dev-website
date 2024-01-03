@@ -27,7 +27,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 57.5%;
   scroll-behavior: smooth;
 }
 
@@ -272,7 +272,7 @@ ul {
   width: 100%;
   min-height: 40vh;
   background: linear-gradient(var(--main-veryLight) 80%, var(--main-lightGray));
-  padding: 8rem 0;
+  padding: 14rem 0;
   transition: all 0.2s ease-in-out;
 }
 
@@ -282,7 +282,7 @@ ul {
   justify-content: center;
   align-items: center;
   background: linear-gradient(var(--main-veryLight) 80%, var(--main-lightGray));
-  padding: 10rem 0;
+  padding: 14rem 0;
   transition: all 0.2s ease-in-out;
 }
 
@@ -292,7 +292,7 @@ ul {
   justify-content: center;
   align-items: center;
   background: linear-gradient(var(--main-veryLight) 80%, var(--main-lightGray));
-  padding: 10rem 0;
+  padding: 14rem 0;
   transition: all 0.2s ease-in-out;
 }
 
@@ -498,7 +498,7 @@ ul {
 
 .projects-grid {
   display: grid;
-  gap: 4rem;
+  gap: 8rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 100%));
   grid-template-rows: auto auto;
   height: auto;

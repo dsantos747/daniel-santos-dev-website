@@ -29,10 +29,10 @@ const throttledMouseMove = mouseThrottle((e) => {
       const offsetX = (deltaX / delta) * -10;
       const offsetY = (deltaY / delta) * -10;
 
-      bubble.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      // bubble.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
       bubble.style.boxShadow = `${offsetX / 5}px ${offsetY / 5}px 1px #00746144`;
     } else {
-      bubble.style.transform = 'translate(0, 0)';
+      // bubble.style.transform = 'translate(0, 0)';
       bubble.style.boxShadow = `0 0 5px #00746144`;
     }
   });
