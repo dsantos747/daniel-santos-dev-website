@@ -1,7 +1,7 @@
 {
-  "rewrites": [
-    { "source": "/blog", "destination": "/" },
-    { "source": "/blog/", "destination": "/" },
-    { "source": "/blog/:slug", "destination": "/blog/:slug.html" }
+  "rewrites": [{ "source": "/blog/:slug", "destination": "/blog/:slug.html" }],
+  "redirects": [
+    { "source": "/blog", "destination": "/#blog", "permanent": false },
+    { "source": "/blog/", "destination": "/#blog", "permanent": false }
   ]
 }
