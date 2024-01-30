@@ -173,11 +173,21 @@
                   <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                   <h4>Visit Site</h4>
                 </a>
+                <button id="btn-openModal" class="btn">
+                  <span><i class="fa-solid fa-circle-play"></i></span>
+                  <h4>Video Demo</h4>
+                </button>
                 <a class="btn" href="https://github.com/dsantos747/nuggets-notes" target="_blank">
                   <span><i class="fab fa-github"></i></span>
                   <h4>Source Code</h4>
                 </a>
               </div>
+              <dialog id="video-modal">
+                <video controls autofocus loop poster="./projects/nuggets_1.webp" preload="metadata" id="video">
+                  <source src="./projects/nuggets_vid.mp4" type="video/mp4" />
+                </video>
+                <button type="button" id="btn-closeModal"><i class="fa-solid fa-x"></i></button>
+              </dialog>
             </div>
             <div class="project">
               <div class="project-imgs">
@@ -295,7 +305,6 @@
               <div class="project-imgs-mini">
                 <img src="./projects/next_drum_machine.webp" alt="Next.js Drum Machine" />
               </div>
-              <!-- <div class="project-text"></div> -->
               <h3 class="project-title">Next.js Drum Machine</h3>
               <div class="project-links">
                 <a class="btn" href="https://ds-drum-machine.vercel.app/" target="_blank">
@@ -312,7 +321,6 @@
               <div class="project-imgs-mini">
                 <img src="./projects/js_calculator.webp" alt="JavaScript Calculator" />
               </div>
-              <!-- <div class="project-text"></div> -->
               <h3 class="project-title">JavaScript Calculator</h3>
               <div class="project-links">
                 <a class="btn" href="https://ds-js-calculator.vercel.app/" target="_blank">

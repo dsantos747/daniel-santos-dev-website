@@ -31,7 +31,8 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+body,
+button {
   font-family: 'Work Sans', Helvetica, Arial, Sans-serif;
   font-size: 1.4rem;
 }
@@ -379,8 +380,6 @@ ul {
   font-family: monospace;
   width: 150px;
   text-align: center;
-  /* opacity: 0;
-  transition: opacity 0.5s ease-out; */
 }
 
 @media (min-width: 1024px) {
@@ -448,7 +447,6 @@ ul {
   padding: 5px 10px;
   border-radius: 15px;
   border: 1px solid var(--main-gray);
-  background-color: var(--main-lightGray);
   background: linear-gradient(350deg, var(--main-lightGray), var(--main-veryLight) 40%);
   box-shadow: 0 0 1px #00746144;
   -webkit-user-select: none;
@@ -655,6 +653,7 @@ ul {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -680,6 +679,45 @@ ul {
   background-color: var(--main-white);
   border: 2px solid var(--main-green);
   transition: all 0.3s;
+}
+
+dialog[open] {
+  margin: auto;
+  display: flex;
+  padding: 0;
+  border-radius: 10px;
+  border: none;
+}
+
+dialog video {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: initial;
+  max-width: 90vw;
+  max-height: 80vh;
+  margin: 0;
+}
+
+dialog button {
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--main-white);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+dialog button:hover {
+  color: var(--main-lightGreen);
+}
+
+dialog::backdrop {
+  background-color: black;
+  opacity: 0.75;
 }
 
 #returnHome a {
@@ -710,7 +748,6 @@ ul {
   padding: 30px;
   border-radius: 15px;
   border: 1px solid var(--main-gray);
-  background-color: var(--main-lightGray);
   background: linear-gradient(350deg, var(--main-lightGray), var(--main-veryLight) 40%);
   box-shadow: 0 2px 3px #710b7344;
 }
@@ -740,7 +777,6 @@ ul {
   gap: 15px;
   padding: 20px 0;
   align-items: center;
-  /* overflow-x: hidden; */
 }
 
 .post-content ul {
