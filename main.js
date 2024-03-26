@@ -40,19 +40,38 @@ document.addEventListener('keydown', (e) => {
 /**
  * Modal Malarkey
  */
-const dialog = document.getElementById('video-modal');
-const showButton = document.getElementById('btn-openModal');
-const closeButton = document.getElementById('btn-closeModal');
-
-showButton.addEventListener('click', () => {
-  dialog.showModal();
+const modalButtons = document.querySelectorAll('.btn-openModal');
+modalButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const modal = document.getElementById(button.dataset.modal);
+    modal.showModal();
+  });
 });
 
-closeButton.addEventListener('click', () => {
-  dialog.close();
+const closeButtons = document.querySelectorAll('.btn-closeModal');
+closeButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const modal = document.getElementById(button.dataset.modal);
+    modal.close();
+  });
 });
 
-dialog.addEventListener('click', () => dialog.close());
+// Close on outside click
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('modal')) {
+    const openModals = document.querySelectorAll('.modal[open]');
+    if (openModals.length > 0) {
+      openModals[openModals.length - 1].close();
+    }
+  }
+});
 
-const video = document.getElementById('video');
-video.addEventListener('click', (event) => event.stopPropagation());
+// Close on escape key
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    const openModals = document.querySelectorAll('.modal[open]');
+    if (openModals.length > 0) {
+      openModals[openModals.length - 1].close();
+    }
+  }
+});

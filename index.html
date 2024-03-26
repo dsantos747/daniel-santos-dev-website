@@ -69,7 +69,7 @@
                 <span class="pulse-2">Engineering Background</span>
               </h3>
               <p>
-                Hi there! I'm a budding full-stack developer with a Mechanical Engineering background.<br />
+                Hi there! I'm a full-stack developer with a Mechanical Engineering background.<br />
                 I'm driven to success, and keen to get involved in projects which extract the best of my skillset.<br /><br />
                 Take a look below at some examples of my work. Then, reach out to me via my contact handles below.
               </p>
@@ -91,9 +91,9 @@
             </div>
             <div class="welcome-stack-cloud">
               <div class="welcome-stack-bubble">Python</div>
+              <div class="welcome-stack-bubble">Go</div>
               <div class="welcome-stack-bubble">Javascript</div>
               <div class="welcome-stack-bubble">Typescript</div>
-              <div class="welcome-stack-bubble">Go</div>
               <div class="welcome-stack-bubble">Node.js</div>
               <div class="welcome-stack-bubble">Next.js</div>
               <div class="welcome-stack-bubble">React</div>
@@ -102,7 +102,7 @@
               <div class="welcome-stack-bubble">Google Cloud</div>
               <div class="welcome-stack-bubble">Docker</div>
               <div class="welcome-stack-bubble">PostgreSql</div>
-              <div class="welcome-stack-bubble">Redis</div>
+              <!-- <div class="welcome-stack-bubble">Redis</div> -->
             </div>
           </div>
         </div>
@@ -132,7 +132,8 @@
                   This project leverages a <strong class="pulse-1">React</strong> with <strong class="pulse-1">Typescript</strong> frontend,
                   <strong class="pulse-1">Docker</strong>ised and hosted on <strong class="pulse-1">Google Cloud Run</strong>. The backend
                   was written in <strong class="pulse-1">Go</strong>, and is hosted as serverless
-                  <strong class="pulse-1">Google Cloud Functions</strong>.
+                  <strong class="pulse-1">Google Cloud Functions</strong>. A CI pipeline was set up for running unit tests and reporting
+                  coverage.
                 </p>
               </div>
               <div class="project-links">
@@ -140,11 +141,21 @@
                   <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                   <h4>Visit Site</h4>
                 </a>
+                <button data-modal="modal-colorboxd" class="btn btn-openModal">
+                  <span><i class="fa-solid fa-circle-play"></i></span>
+                  <h4>Video Demo</h4>
+                </button>
                 <a class="btn" href="https://github.com/dsantos747/colorboxd" target="_blank">
                   <span><i class="fab fa-github"></i></span>
                   <h4>Source Code</h4>
                 </a>
               </div>
+              <dialog id="modal-colorboxd" class="modal">
+                <video controls autofocus loop poster="./projects/colorboxd_1.webp" preload="metadata" id="video">
+                  <source src="./projects/colorboxd_sm.mp4" type="video/mp4" />
+                </video>
+                <button type="button" data-modal="modal-colorboxd" class="btn-closeModal"><i class="fa-solid fa-x"></i></button>
+              </dialog>
             </div>
             <div class="project">
               <div class="project-imgs">
@@ -206,7 +217,7 @@
                   <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                   <h4>Visit Site</h4>
                 </a>
-                <button id="btn-openModal" class="btn">
+                <button data-modal="modal-nuggets" class="btn btn-openModal">
                   <span><i class="fa-solid fa-circle-play"></i></span>
                   <h4>Video Demo</h4>
                 </button>
@@ -215,11 +226,11 @@
                   <h4>Source Code</h4>
                 </a>
               </div>
-              <dialog id="video-modal">
+              <dialog id="modal-nuggets" class="modal">
                 <video controls autofocus loop poster="./projects/nuggets_1.webp" preload="metadata" id="video">
                   <source src="./projects/nuggets_vid.mp4" type="video/mp4" />
                 </video>
-                <button type="button" id="btn-closeModal"><i class="fa-solid fa-x"></i></button>
+                <button type="button" data-modal="modal-nuggets" class="btn-closeModal"><i class="fa-solid fa-x"></i></button>
               </dialog>
             </div>
             <div class="project">

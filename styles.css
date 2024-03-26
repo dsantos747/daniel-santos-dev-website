@@ -668,6 +668,7 @@ ul {
   text-decoration: none;
   justify-content: center;
   font-size: 1.8rem;
+  cursor: pointer;
 }
 
 .projects-grid-mini .btn {
